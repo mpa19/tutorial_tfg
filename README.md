@@ -5,12 +5,11 @@ Flutter application that implements basic aspect for an application.
 
 # Material Components widgets
    * App structure and navigation
-   
       - [] AppBar
-      [] BottomNavigationBar
-      [] Drawer (SideMenu)
-      [] TabBar
-      [] Navigate to a new screen and back
+      - [] BottomNavigationBar
+      - [] Drawer (SideMenu)
+      - [] TabBar
+      - [] Navigate to a new screen and back
   
    * Buttons
       [] DropdownButton
