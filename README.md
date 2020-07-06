@@ -6,7 +6,7 @@ Flutter application that implements basic aspect for an application.
 # Material Components widgets
    * App structure and navigation
    
-      - [ ] AppBar
+      - [x] AppBar
       - [ ] BottomNavigationBar
       - [ ] Drawer (SideMenu)
       - [ ] TabBar
@@ -33,7 +33,6 @@ Flutter application that implements basic aspect for an application.
       - [ ] AlertDialog
       - [ ] BottomSheet
       - [ ] SimpleDialog
-      
       - [ ] SnachBar
 
 
