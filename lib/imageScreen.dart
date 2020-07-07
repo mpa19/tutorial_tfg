@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class imageScreen extends StatefulWidget {
+class inputScreen extends StatefulWidget {
 
   @override
-  _imageScreenState createState() => _imageScreenState();
+  _inputScreenState createState() => _inputScreenState();
 }
 
-class _imageScreenState extends State<imageScreen>{
+class _inputScreenState extends State<inputScreen>{
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class _imageScreenState extends State<imageScreen>{
         appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-          title: Text("ImageScreen"),
+          title: Text("Input and selections"),
         ),
     );
   }
