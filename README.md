@@ -16,7 +16,7 @@ Flutter application that implements basic aspect for an application.
    * Buttons
       - [ ] DropdownButton
       - [ ] FloatingActionButton
-      - [ ] FlatButton
+      - [x] FlatButton
       - [ ] PopupMenuButton
 
 
