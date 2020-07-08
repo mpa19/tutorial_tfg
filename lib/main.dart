@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tutorial_tfg/imageScreen.dart';
+import 'package:tutorial_tfg/otherScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +31,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  Widget callPage(int selectedIndex) {
+    switch (selectedIndex) {
+      case 0: return otherScreen();
+      case 1: return inputScreen();
+        break;
+      default: return otherScreen();
+    }
+  }
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +55,32 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body : Column(
+        body: callPage(_selectedIndex),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                title: Text('Home'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.business),
+                title: Text('Business'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.school),
+                title: Text('School'),
+              ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),
+    );
+  }
+}
+
+/*
+* Column(
         children: <Widget>[
           SizedBox(height: 10),
 
@@ -129,22 +170,5 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
           )
         ]
-      )
-    );
-  }
-}
- /* ButtonTheme(
-        buttonColor: Color(0xFF031e39),
-        minWidth: double.infinity,
-        child: FlatButton(
-          color: Colors.blueGrey, //Color(0xFF81A483),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-                builder: (context) => inputScreen()
-              ),
-            );
-          },
-          child: Text('Input and selections',style: TextStyle(color: Colors.white),),
-        ),
       ),
-*/
+* */
