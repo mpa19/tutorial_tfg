@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'inputScreen.dart';
 
 class tabMenuScreen extends StatefulWidget {
 
