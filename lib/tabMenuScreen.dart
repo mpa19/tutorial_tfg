@@ -30,20 +30,19 @@ class _tabMenuScreenState extends State<tabMenuScreen>{
               ),
             ),
           ),
+          Expanded(
+            child: TabBarView(
+              children: [
+                Icon(Icons.directions_car),
+                FlatButton(
+                  color: Colors.blueGrey,
+                  onPressed: null,),
+                Text('Input and selections',style: TextStyle(color: Colors.white)),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-
-
-/*Expanded(
-            child: TabBarView(
-              children: [
-                Icon(Icons.directions_car),
-                Icon(Icons.directions_transit),
-                Icon(Icons.directions_bike),
-              ],
-            ),
-          ),*/
