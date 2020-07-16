@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:tutorial_tfg/inputScreen.dart';
 import 'package:tutorial_tfg/otherScreen.dart';
@@ -81,21 +83,25 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const <Widget>[
+          children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
             ),
-            child: Text('Drawer Header',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              ),
-            ),
+            child: Image(
+                image: NetworkImage('https://upload-icon.s3.us-east-2.amazonaws.com/uploads/icons/png/4080540331548233623-512.png'),
+                height: 5.0,
+                width: 5.0,
+            )
           ),
           ListTile(
             leading: Icon(Icons.message),
             title: Text('Messages'),
+            onTap: () {
+              // change app state...
+              Navigator.push(
+              context, MaterialPageRoute(builder: (context) => inputScreen()));
+              },
           ),
             ListTile(
               leading: Icon(Icons.account_circle),
