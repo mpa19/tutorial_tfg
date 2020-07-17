@@ -1,8 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:tutorial_tfg/inputScreen.dart';
 import 'package:tutorial_tfg/otherScreen.dart';
+import 'package:tutorial_tfg/sendDataScreen.dart';
 import 'package:tutorial_tfg/tabMenuScreen.dart';
 
 void main() {
@@ -100,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onTap: () {
               // change app state...
               Navigator.push(
-              context, MaterialPageRoute(builder: (context) => inputScreen()));
+              context, MaterialPageRoute(builder: (context) => sendDataScreen()));
               },
           ),
             ListTile(
