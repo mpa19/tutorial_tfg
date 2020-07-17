@@ -96,7 +96,10 @@ class _otherScreenState extends State<otherScreen>{
                   color: Colors.blueGrey, //Color(0xFF81A483),
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => sendDataScreen()
+                      builder: (context) => sendDataScreen(),
+                      settings: RouteSettings(
+                        arguments: valor
+                      )
                     ),
                     );
                   },
