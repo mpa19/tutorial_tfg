@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tutorial_tfg/sendDataScreen.dart';
 
 import 'inputScreen.dart';
 
@@ -10,6 +11,7 @@ class otherScreen extends StatefulWidget {
 }
 
 class _otherScreenState extends State<otherScreen>{
+  String valor = "";
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +96,7 @@ class _otherScreenState extends State<otherScreen>{
                   color: Colors.blueGrey, //Color(0xFF81A483),
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => inputScreen()
+                      builder: (context) => sendDataScreen()
                     ),
                     );
                   },
@@ -102,7 +104,14 @@ class _otherScreenState extends State<otherScreen>{
                 )
               ),
             )
-          )
+          ),
+            Flexible(
+              child: TextField(
+                onChanged: (text) {
+                  valor = text;
+                },
+              ),
+            )
         ],
        )
       ]
