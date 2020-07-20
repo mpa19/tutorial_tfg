@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tutorial_tfg/gridViewScreen.dart';
 import 'package:tutorial_tfg/sendDataScreen.dart';
 
 import 'inputScreen.dart';
@@ -27,11 +28,11 @@ class _otherScreenState extends State<otherScreen>{
               color: Colors.blueGrey, //Color(0xFF81A483),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (context) => inputScreen()
+                  builder: (context) => gridViewScreen()
                   ),
                 );
               },
-              child: Text('Input and selections',style: TextStyle(color: Colors.white),
+              child: Text('Grid View',style: TextStyle(color: Colors.white),
               ),
 
             )
