@@ -12,7 +12,7 @@ class _sendDataScreenState extends State<sendDataScreen>{
   @override
   Widget build(BuildContext context) {
     String todo = ModalRoute.of(context).settings.arguments;
-
+    if(todo == null) { todo = "";}
     return Scaffold(
         appBar: AppBar(
           // Here we take the value from the MyHomePage object that was created by
