@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tutorial_tfg/main.dart';
+
+import 'loginScreen.dart';
 
 class inputScreen extends StatefulWidget {
 
@@ -14,23 +15,23 @@ class _inputScreenState extends State<inputScreen>{
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: FlatButton(
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(
-                    builder: (context) => MyApp()
-                ),
-                );
-              },
-              child: Text("Cerrar session",
-                style: TextStyle(
-                  color: Colors.red,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Colors.red,
-                  decorationStyle: TextDecorationStyle.wavy,
+              child: FlatButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => loginScreen()
+                  ),
+                  );
+                },
+                child: Text("Cerrar session",
+                    style: TextStyle(
+                      color: Colors.red,
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.red,
+                      decorationStyle: TextDecorationStyle.wavy,
+                    )
+                  ),
                 ),
               ),
-            ),
-        )
     );
   }
 }
