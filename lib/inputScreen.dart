@@ -11,16 +11,50 @@ class inputScreen extends StatefulWidget {
 
 class _inputScreenState extends State<inputScreen>{
 
+  Future<void> _showMyDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Cerrando session'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Se esta cerrando al session.'),
+                Text('Estas seguro?'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('No'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('Si'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => loginScreen()
+                )
+                );
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
               child: FlatButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => loginScreen()
-                  ),
-                  );
+                  _showMyDialog();
                 },
                 child: Text("Cerrar session",
                     style: TextStyle(
