@@ -7,14 +7,42 @@ class loginScreen extends StatefulWidget {
   _loginScreenState createState() => _loginScreenState();
 }
 
+class SnackBarPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: RaisedButton(
+        onPressed: () {
+
+
+          // Encuentra el Scaffold en el árbol de widgets y ¡úsalo para mostrar un SnackBar!
+        },
+        child: Text('Show SnackBar'),
+      ),
+    );
+  }
+}
+
 class _loginScreenState  extends State<loginScreen>{
   String dropdownValue = 'Marc';
 
+  final snackBar = SnackBar(
+    content: Text('Yay! A SnackBar!'),
+    action: SnackBarAction(
+      label: 'Undo',
+      onPressed: () {
+        // Algo de código para ¡deshacer el cambio!
+      },
+    ),
+  );
+
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      key: _scaffoldKey,
       body: Column(
 
           children: <Widget>[
@@ -40,6 +68,8 @@ class _loginScreenState  extends State<loginScreen>{
                         setState(() {
                           dropdownValue = newValue;
                         });
+                        _scaffoldKey.currentState.showSnackBar(snackBar);
+
                       },
                       items: <String>['Marc', 'Mario', 'Mike', 'Gerard']
                           .map<DropdownMenuItem<String>>((String value) {
@@ -55,8 +85,8 @@ class _loginScreenState  extends State<loginScreen>{
             ),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                //mainAxisAlignment: MainAxisAlignment.end,
+                //crossAxisAlignment: CrossAxisAlignment.end,
                 children: <Widget>[
                   ButtonTheme(
                     minWidth: 200,
