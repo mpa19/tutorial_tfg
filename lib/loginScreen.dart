@@ -13,8 +13,6 @@ class SnackBarPage extends StatelessWidget {
     return Center(
       child: RaisedButton(
         onPressed: () {
-
-
           // Encuentra el Scaffold en el árbol de widgets y ¡úsalo para mostrar un SnackBar!
         },
         child: Text('Show SnackBar'),

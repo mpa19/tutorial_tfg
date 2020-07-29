@@ -14,6 +14,35 @@ class otherScreen extends StatefulWidget {
 class _otherScreenState extends State<otherScreen>{
   String valor = "";
 
+  Future<void> _askedToLead() async {
+    switch (await showDialog<otherScreen>(
+        context: context,
+        builder: (BuildContext context) {
+          return SimpleDialog(
+            title: const Text('Select assignment'),
+            children: <Widget>[
+              SimpleDialogOption(
+                onPressed: () { Navigator.pop(context, otherScreen); },
+                child: const Text('Treasury department'),
+              ),
+              SimpleDialogOption(
+                onPressed: () { Navigator.pop(context, otherScreen); },
+                child: const Text('State department'),
+              ),
+            ],
+          );
+        }
+    )) {
+      /*case Department.treasury:
+      // Let's go.
+      // ...
+        break;
+      case Department.state:
+      // ...
+        break;*/
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,12 +104,9 @@ class _otherScreenState extends State<otherScreen>{
                 child: FlatButton(
                   color: Colors.blueGrey, //Color(0xFF81A483),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) => inputScreen()
-                    ),
-                    );
+                    _askedToLead();
                   },
-                  child: Text('Input and selections',style: TextStyle(color: Colors.white),
+                  child: Text('Simple Dialog',style: TextStyle(color: Colors.white),
                   ),
 
                 )
